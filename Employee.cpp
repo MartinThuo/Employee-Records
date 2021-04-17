@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "~/DEV/C++/employeeRecords/Employee.h"
+#include "Employee.h"
 
 using namespace std;
 
