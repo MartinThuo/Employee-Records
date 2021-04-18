@@ -87,7 +87,7 @@ void doHire(Database& inDB)
 
     cout << "First name? ";
     cin >> firstName;
-    cout << "Last name?";
+    cout << "Last name? ";
     cin >> lastName;
 
     try {
