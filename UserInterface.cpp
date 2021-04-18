@@ -79,3 +79,20 @@ int displayMenu()
 
     return selection;
 }
+
+void doHire(Database& inDB)
+{
+    string firstName;
+    string lastName;
+
+    cout << "First name? ";
+    cin >> firstName;
+    cout << "Last name?";
+
+    try {
+        inDB.addEmployee(firstName, lastName);
+    } catch (std::exception ex) {
+        cerr << "Unable to add new employee!" << endl;
+    }
+}
+
