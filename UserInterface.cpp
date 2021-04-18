@@ -96,3 +96,37 @@ void doHire(Database& inDB)
     }
 }
 
+void doFire(Database& inDB)
+{
+    int employeeNumber;
+
+    cout << "Employee number? ";
+    cin >> employeeNumber;
+
+    try {
+        Employee& emp = inDB.getEmployee(employeeNumber);
+        emp.fire();
+        cout << "Empployee " << employeeNumber << " has been terminated." << endl;
+    } catch (std::exception ex) {
+        cerr << "Unable to terminate employee!" << endl;
+    }
+}
+
+void doPromote(Database& inDB)
+{
+    int employeeNumber;
+    int raiseAmount;
+
+    cout << "Employee number? ";
+    cin >> employeeNumber;
+
+    cout << "How much of a raise? ";
+    cin >> raiseAmount;
+
+    try {
+        Employee& emp = inDB.getEmployee(employeeNumber);
+        emp.promote(raiseAmount);
+    } catch {
+        cerr << "Unable to promote employee!" << endl;
+    }
+}
