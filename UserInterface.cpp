@@ -88,6 +88,7 @@ void doHire(Database& inDB)
     cout << "First name? ";
     cin >> firstName;
     cout << "Last name?";
+    cin >> lastName;
 
     try {
         inDB.addEmployee(firstName, lastName);
@@ -126,7 +127,7 @@ void doPromote(Database& inDB)
     try {
         Employee& emp = inDB.getEmployee(employeeNumber);
         emp.promote(raiseAmount);
-    } catch {
+    } catch (std::exception ex) {
         cerr << "Unable to promote employee!" << endl;
     }
 }
